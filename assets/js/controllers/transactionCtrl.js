@@ -25,7 +25,7 @@ paypalApp.controller("transactionCtrl", ['$scope', 'userModel', '$location', fun
     // Get only those currencies for which the user has a positive balance.
     $scope.currencyList = $scope.userModel.currencyList(); 
 
-        
+
     // Process transaction
     $scope.transact = function() {
         if ((typeof $scope.transactionModel === 'undefined') || (typeof $scope.transactionModel.currency === 'undefined') || (typeof $scope.transactionModel.value === 'undefined') ) {
@@ -42,7 +42,8 @@ paypalApp.controller("transactionCtrl", ['$scope', 'userModel', '$location', fun
         var result = $scope.userModel.processTransaction({id: 1, cash: {currency: $scope.transactionModel.currency, value: $scope.transactionModel.value}, otherparty: partyemail});
         if (result.message == "success") {
             console.log("success");
-            $location.path('#transaction_confirmation');
+            $location.path('/transaction_confirmation');
+            $scope.apply();
         } 
         else {
             $scope.transactionModel.error = result.message;
