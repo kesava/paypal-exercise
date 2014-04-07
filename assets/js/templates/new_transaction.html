@@ -1,0 +1,28 @@
+ <form action="" id="" name="newtransaction">
+     <div title="transaction">
+        <span class="error">{{transactionModel.error}}</span>
+        <input type="email" ng-model="transactionModel.email" bs-input label="Send To:" placeholder="johndoe@email.com">
+       <select class="form-control" ng-model="transactionModel.party" ng-options="(p.name + ' - ' + p.email) for p in partyList"  bs-input label="or choose from:">
+              <option value="" disabled selected>existing  contacts</option>
+       </select>
+        <select class="form-control" ng-model="transactionModel.currency" ng-options="c for c in currencyList" bs-input label="Currency Type">
+                  <option value="" disabled selected>Select your currency</option>
+        </select>
+       <input type="number" name="input" ng-model="transactionModel.value" min="0" max="99" required bs-input label="Amount" placeholder="0.00">
+        <textarea type="text" ng-model="transactionModel.message" label="Message (optional):" bs-textarea></textarea>
+     </div>
+</form>
+
+  <div class="navbar navbar-app navbar-absolute-bottom">
+      <div class="btn-group pull-left">
+        <div class="btn btn-navbar">
+          <button class="btn btn-primary" ng-disabled="newtransaction.$invalid" ng-click="reset()">Clear</button>
+        </div>
+      </div>
+
+      <div class="btn-group pull-right">
+        <div class="btn btn-navbar">
+          <button class="btn" ng-click="transact()">Next</button>
+        </div>
+      </div>
+  </div>
