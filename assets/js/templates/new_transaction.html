@@ -8,7 +8,7 @@
         <select class="form-control" ng-model="transactionModel.currency" ng-options="c for c in currencyList" bs-input label="Currency Type">
                   <option value="" disabled selected>Select your currency</option>
         </select>
-       <input type="number" name="input" ng-model="transactionModel.value" min="0" max="99" required bs-input label="Amount" placeholder="0.00">
+       <input type="number" name="input" ng-model="transactionModel.value" min="0" max="9999" required bs-input label="Amount" placeholder="0.00">
         <textarea type="text" ng-model="transactionModel.message" label="Message (optional):" bs-textarea></textarea>
      </div>
 </form>
