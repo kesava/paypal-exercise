@@ -1,0 +1,26 @@
+{
+  "name": "paypal",
+  "version": "0.0.1",
+  "description": "paypal exercise",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^3.5.1",
+    "node": "~0.0.0",
+    "logfmt": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kesava/paypal-exercise.git"
+  },
+  "author": "Kesava Mallela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kesava/paypal-exercise/issues"
+  },
+  "homepage": "https://github.com/kesava/paypal-exercise"
+}
